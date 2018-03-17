@@ -37,9 +37,51 @@
 </table>
 <br>
 <button id="toupdate" class="mdl-button mdl-js-button mdl-button--primary">
-    <a href="/update">UPDATE</a>
+    UPDATE
 </button>
 <button id="delete" class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised">
    DELETE
 </button>
+
+<form action="/update" method="POST" style="margin:30px; visibility: hidden" id="formUpdate">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="inLastName" name="lastName">
+        <label class="mdl-textfield__label" for="inLastName">Last name</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="inFirstName" name="fisrtName">
+        <label class="mdl-textfield__label" for="inFirstName">First name</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="inBirthDate" name="birthDate">
+        <label class="mdl-textfield__label" for="inBirthDate">Birth date</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="inEMail" name="email">
+        <label class="mdl-textfield__label" for="inEMail">Email</label>
+    </div><br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="inAdress" name="adress">
+        <label class="mdl-textfield__label" for="inAdress">Adress</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="inSubscriptionEnd" name="subscriptionEnd">
+        <label class="mdl-textfield__label" for="inSubscriptionEnd">Subscription's end</label>
+    </div>
+    <div id="isActive">
+        Is Active <br>
+        <input type="radio" name="active" value="Yes" > Yes
+        <input type="radio" name="active" value="No"> No
+    </div>
+    <div id="isRenewable">
+        Is Renewable <br>
+        <input type="radio" name="Renewable" value="Yes" > Yes
+        <input type="radio" name="Renewable" value="No"> No
+    </div>
+    <button id="update" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">UPDATE</button>
+</form>
+
+
+
+
 <script src="main.js"></script>

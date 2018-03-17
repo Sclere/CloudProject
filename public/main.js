@@ -1,47 +1,31 @@
 // main.js
-
-var lastName;
-var firstName;
-var birthDate;
-var adress;
-var email;
-var subscriptionend;
-var active;
-var renewable;
-
-var bodyContent;
-var updateContent;
+var prevLastName;
 
 function getRow(row) {
     var x=row.cells;
-    lastName= x[1].innerHTML.toString().trim();
-    firstName = x[2].innerHTML.toString();
-    birthDate = x[3].innerHTML.toString();
-    adress = x[4].innerHTML.toString();
-    email = x[5].innerHTML.toString();
-    subscriptionend = x[6].innerHTML.toString();
-    active = x[7].innerHTML.toString();
-    renewable = x[8].innerHTML.toString();
-    bodyContent = { 'lastName': lastName,
-        'firstName': firstName
-    };
+    prevLastName= x[1].innerHTML.toString().trim();
 }
 
-/*module.exports = {
-    getValue: function() {
-        updateContent = {
-            'lastName': lastName,
-            'firstName': firstName,
-            'birthDate': birthDate,
-            'adress': adress,
-            'email': email,
-            'subscriptionEnd': subscriptionend,
-            'active': active,
-            'renewable': renewable
-        };
-        return updateContent;
-    }
-};*/
+var toupdate = document.getElementById('toupdate');
+toupdate.addEventListener('click',function () {
+    var formUpdate = document.getElementById('formUpdate');
+    formUpdate.style.visibility = 'visible';
+    fetch('subscriptions', {
+        method: 'put',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            prevlastName:prevLastName
+        })
+    });
+});
+
+
+
+/*var update = document.getElementById('update');
+update.addEventListener('click', function () {
+    document.getElementById('formUpdate').style.visibility = 'hidden';
+});*/
+
 
 var del = document.getElementById('delete');
 
@@ -52,7 +36,7 @@ del.addEventListener('click', function () {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(bodyContent)
+        body: JSON.stringify({lastName : prevLastName})
     }).then(function(res) {
         if (res.ok) return res.json();
     }).then(function(data){
