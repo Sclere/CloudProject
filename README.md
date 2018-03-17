@@ -32,3 +32,6 @@ Déployement de l'application dans AWS :
     node server.js
 
 7 - Rendez vous sur l'adresse fournie par l'EC2
+    L'écoute se fait sur le port 3000.
+    
+    <Adresse de l'instance EC2>:3000
