@@ -1,0 +1,45 @@
+<% extend('base') %>
+<h4>Subscription's List</h4>
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+    <thead>
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">Last Name</th>
+        <th>First Name</th>
+        <th>Birth Date</th>
+        <th>EMail</th>
+        <th>Adress</th>
+        <th>Subscription End</th>
+        <th>Is Active</th>
+        <th>Is Renewable</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for(var i=0; i<subscriptions.length; i++) {%>
+    <tr onclick="getRow(this);">
+    <td class="mdl-data-table__cell--non-numeric">
+        <%= subscriptions[i].lastName %></td>
+    <td><%= subscriptions[i].fisrtName %></td>
+    <td><%= subscriptions[i].birthDate %></td>
+    <td><%= subscriptions[i].email %></td>
+    <td><%= subscriptions[i].adress %></td>
+    <td><%= subscriptions[i].subscriptionEnd %></td>
+    <td>
+            <%= subscriptions[i].activeYes %>
+            <%= subscriptions[i].activeNo %>
+    </td>
+    <td>
+            <%= subscriptions[i].RenewableYes %>
+            <%= subscriptions[i].RenewableNo %>
+    </td>
+    </tr>
+    <% } %>
+    </tbody>
+</table>
+<br>
+<button id="toupdate" class="mdl-button mdl-js-button mdl-button--primary">
+    <a href="/update">UPDATE</a>
+</button>
+<button id="delete" class="mdl-button mdl-js-button mdl-button--primary mdl-button--raised">
+   DELETE
+</button>
+<script src="main.js"></script>

@@ -1,0 +1,38 @@
+<% extend('base') %>
+
+<h4>Create a Subscription</h4>
+<form action="/subscriptions" method="POST" style="margin:30px;">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="sample3" name="lastName">
+        <label class="mdl-textfield__label" for="sample3">Last name</label>
+    </div><br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="sample3" name="fisrtName">
+        <label class="mdl-textfield__label" for="sample3">First name</label>
+    </div><br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="sample3" name="birthDate">
+        <label class="mdl-textfield__label" for="sample3">Birth date</label>
+    </div><br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="sample3" name="email">
+        <label class="mdl-textfield__label" for="sample3">Email</label>
+    </div><br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="sample3" name="adress">
+        <label class="mdl-textfield__label" for="sample3">Adress</label>
+    </div><br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="sample3" name="subscriptionEnd">
+        <label class="mdl-textfield__label" for="sample3">Subscription's end</label>
+    </div><br>
+    <div id="isActive" >
+        <input type="radio" name="activeYes" value="Yes" > Yes<br>
+        <input type="radio" name="activeNo" value="No"> No
+    </div>
+    <div id="isRenewable">
+        <input type="radio" name="RenewableYes" value="Yes"> Yes<br>
+        <input type="radio" name="RenewableNo" value="No"> No
+    </div>
+    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Submit</button>
+</form>
