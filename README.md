@@ -1,4 +1,6 @@
-Project
+Project Cloud 
+
+Clément Garrigues / Kevin Nagra
 
 Visualisation de la base de données:
  https://mlab.com/home
